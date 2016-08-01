@@ -13,7 +13,7 @@ angular.module('blog')
       templateUrl: "components/home.html"
     })
     .state('app.about', {
-      url: "/about",
+      url: "about",
       templateUrl: "components/about.html"
     })
 })

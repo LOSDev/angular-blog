@@ -1,1 +1,1 @@
-angular.module('blog', ['ui.router', 'templates', 'Devise']);
+angular.module('blog', ['ui.router', 'templates', 'Devise', 'toastr']);

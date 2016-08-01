@@ -15,6 +15,7 @@
 //= require angular
 //= require angular-ui-router
 //= require angular-devise
+//= require angular-toastr
 
 //= require angular-rails-templates
 //= require app
