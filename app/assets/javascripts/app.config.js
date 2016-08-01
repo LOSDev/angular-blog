@@ -14,6 +14,11 @@ angular.module('blog')
     })
     .state('app.about', {
       url: "about",
-      templateUrl: "components/about.html"
+      templateUrl: "components/about.html",
+      onEnter: ['$state', 'Auth', function($state, Auth) {
+        Auth.currentUser().catch(function (){
+          $state.go('app.login');
+        })
+      }]
     })
 })

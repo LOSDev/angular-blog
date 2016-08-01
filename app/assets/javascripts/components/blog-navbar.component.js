@@ -8,7 +8,7 @@ angular.module('blog')
     .then(function (resp) {
       $rootScope.user = resp
     }, function (err) {
-      console.log(err);
+      
     })
 
     vm.logout = function () {

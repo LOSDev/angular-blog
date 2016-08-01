@@ -19,4 +19,13 @@ angular.module('blog')
         })
       }]
     })
+    .state('app.settings', {
+      url: "settings",
+      template: "<settings user='$resolve.user'></settings>",
+      onEnter: ['$state', 'Auth', function($state, Auth) {
+        Auth.currentUser().catch(function (){
+         $state.go('app.home');
+        })
+      }]
+    })
 })
