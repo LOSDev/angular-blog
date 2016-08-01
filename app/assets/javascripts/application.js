@@ -17,4 +17,5 @@
 //= require angular-devise
 
 //= require angular-rails-templates
+//= require app
 //= require_tree .
