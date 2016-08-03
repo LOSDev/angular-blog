@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 
   def index
-    @posts = Post.all
+    @posts = Post.all.order("created_at DESC")
   end
 
   def show
@@ -13,7 +13,7 @@ class PostsController < ApplicationController
     if @post.save
       render 'show'
     else
-      render json: @post.errors
+      render json: @post.errors.full_messages, status: :unprocessable_entity
     end
   end
 

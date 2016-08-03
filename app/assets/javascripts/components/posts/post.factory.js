@@ -8,6 +8,8 @@ angular.module('blog')
   o.get = function (id) {
     return $http.get(urlBase + "/" + id + ".json")
   }
-
+  o.getAll = function () {
+    return $http.get(urlBase + ".json")
+  }
   return o;
 }])

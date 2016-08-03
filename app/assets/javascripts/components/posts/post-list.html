@@ -1,0 +1,6 @@
+<div class="posts" ng-repeat="post in $ctrl.posts">
+  <h2><a ui-sref="app.postDetails({postId: post.id})">{{post.title}}</a></h2>
+  <p>
+    {{post.created_at | date}}
+  </p>
+</div>

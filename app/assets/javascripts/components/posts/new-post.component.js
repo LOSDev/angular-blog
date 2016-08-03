@@ -7,6 +7,8 @@ angular.module('blog')
       Post.create(vm.post)
       .then(function (resp) {
         $state.go('app.postDetails', {postId: resp.data.id})
+      }, function (err) {
+        vm.errors = err.data;
       })
     }
   }]

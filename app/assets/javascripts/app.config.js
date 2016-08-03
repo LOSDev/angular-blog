@@ -10,7 +10,7 @@ angular.module('blog')
     })
     .state('app.home', {
       url: "",
-      templateUrl: "components/home.html"
+      template: "<post-list></post-list>"
     })
     .state('app.about', {
       url: "about",
