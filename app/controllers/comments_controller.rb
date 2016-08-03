@@ -1,5 +1,7 @@
 class CommentsController < ApplicationController
 
+  before_action :authenticate_user!, except: [:index, :create]
+
   def index
     @post = Post.find(params[:post_id])
     @comments = @post.comments.order("created_at DESC")

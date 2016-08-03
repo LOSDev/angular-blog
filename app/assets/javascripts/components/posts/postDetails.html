@@ -9,7 +9,9 @@
     {{$ctrl.post.body}}
   </p>
 </div>
-<a ui-sref="app.editPost({postId: $ctrl.post.id})" class="btn btn-lg btn-info">Edit Post</a>
-<a href ng-click="$ctrl.delete()" class="btn btn-lg btn-danger">Delete Post</a>
-<comment-list></comment-list>
+<div class="" ng-if="$root.user.id && $root.user.id == $ctrl.post.user.id">
+  <a ui-sref="app.editPost({postId: $ctrl.post.id})" class="btn btn-lg btn-info">Edit Post</a>
+  <a href ng-click="$ctrl.delete()" class="btn btn-lg btn-danger">Delete Post</a>
+</div>
+<comment-list ng-if="$ctrl.post" post="$ctrl.post"></comment-list>
 <new-comment></new-comment>
