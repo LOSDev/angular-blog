@@ -1,0 +1,14 @@
+<div class="page-header">
+  <h3>Comments <small class="label label-info">{{$ctrl.comments.length}}</small></h3>
+</div>
+
+<div class="comments" ng-repeat="comment in $ctrl.comments">
+  <p>
+    <strong>{{comment.body}}</strong>
+  </p>
+  <div>
+    by<strong> {{comment.name}}</strong> - <i>{{comment.created_at | date}}</i>
+    <a href ng-click="$ctrl.delete(comment)" class="btn btn-danger pull-right">Delete</a>
+  </div>
+  <hr>
+</div>
