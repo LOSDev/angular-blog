@@ -9,5 +9,9 @@ angular.module('blog')
       url: "posts/:postId",
       template: "<post-details></post-details>"
     })
+    .state('app.editPost', {
+      url: "posts/:postId/edit",
+      template: "<edit-post></edit-post>"
+    })
 
 })

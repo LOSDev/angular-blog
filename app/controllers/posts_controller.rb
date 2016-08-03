@@ -17,6 +17,21 @@ class PostsController < ApplicationController
     end
   end
 
+  def update
+    @post = User.first.posts.find(params[:id])
+    if @post.update(post_params)
+      render 'show'
+    else
+      render json: @post.errors.full_messages, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @post = User.first.posts.find(params[:id])
+    @post.destroy
+    head :no_content
+  end
+
 
 
   private
