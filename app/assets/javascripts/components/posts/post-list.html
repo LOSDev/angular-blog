@@ -1,10 +1,23 @@
 <div class="alert alert-info" ng-if="$ctrl.tag"><h3>Tagged with: {{$ctrl.tag}}</h3></div>
 <div class="posts" ng-repeat="post in $ctrl.posts">
-  <h2><a ui-sref="app.postDetails({postId: post.id})">{{post.title}}</a></h2>
-  <p>
-    {{post.created_at | date}}
-  </p>
+  <div class="media">
+    <div class="media-left">
+      <a href="#">
+        <img class="media-object" ng-src="{{post.image}}" alt="{{post.image}}" width="64px">
+      </a>
+    </div>
+    <div class="media-body">
+      <h3 class="media-heading"><a ui-sref="app.postDetails({postId: post.id})">{{post.title}}</a></h3>
+      {{post.created_at | date}}
+    </div>
+  </div>
+  <hr>
 </div>
+
+
+
+
+
 <hr>
 <div class="text-center">
   <a class="btn btn-primary pull-left" ng-if="$ctrl.page > 1" ng-click="$ctrl.prevPage()">

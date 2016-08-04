@@ -1,17 +1,26 @@
 <div class="page-header">
   <h2>{{$ctrl.post.title}}</h2>
 </div>
-<p class="date">
-  {{$ctrl.post.created_at | date}}
-</p>
 <p>
   <tag-list tag-list="$ctrl.post.tag_list"></tag-list>
 </p>
-<div class="jumbotron">
-  <p class="container">
-    {{$ctrl.post.body}}
-  </p>
+<div class="jumbotron clearfix">
+  <div class="col-md-6">
+    <div class="thumbnail">
+      <img ng-src="{{$ctrl.post.image}}" class="img-responsive"/>
+      <div class="caption">
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <h3>{{$ctrl.post.title}}</h3>
+    <i>{{$ctrl.post.created_at | date:'fullDate'}}</i>
+  </div>
+  <div class="col-md-12">
+    <p>{{$ctrl.post.body}}</p>
+  </div>
 </div>
+
 <div class="" ng-if="$root.user.id && $root.user.id == $ctrl.post.user.id">
   <a ui-sref="app.editPost({postId: $ctrl.post.id})" class="btn btn-lg btn-info">Edit Post</a>
   <a href ng-click="$ctrl.delete()" class="btn btn-lg btn-danger">Delete Post</a>

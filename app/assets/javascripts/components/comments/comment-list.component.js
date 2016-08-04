@@ -7,6 +7,7 @@ angular.module('blog')
   controller: ['Comment', '$window', 'toastr', function (Comment, $window, toastr) {
     var vm = this;
     vm.page = 1
+    vm.comments= [];
     vm.delete = function (comment) {
       if ($window.confirm("Do you want to delete this comment?")) {
         Comment.delete(vm.post.id, comment)
@@ -17,10 +18,14 @@ angular.module('blog')
     }
 
     vm.getComments = function () {
+      
       Comment.getAll(vm.page, vm.post.id)
       .then(function (resp) {
+        var beforeSize = vm.comments.length;
         vm.comments = resp;
-        if (resp.length < 20) {
+        var afterSize = vm.comments.length;
+
+        if (afterSize - beforeSize < 10) {
           vm.lastPage = true;
         }
       })

@@ -6,10 +6,12 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 Post.delete_all
-46.times do
+Comment.delete_all
+30.times do
   Post.create(title: Faker::Book.title,
             body: Faker::Hipster.paragraphs(5).join('\n\n'),
             user_id: 1,
+            image: Faker::Avatar.image,
             tag_list: [Faker::Hipster.word, Faker::Hipster.word, Faker::Hipster.word])
-  21.times {Comment.create(name: Faker::Name.name, body: Faker::Hipster.paragraph, post_id: Post.last.id)}
+  12.times {Comment.create(name: Faker::Name.name, body: Faker::Hipster.paragraph, post_id: Post.last.id)}
 end

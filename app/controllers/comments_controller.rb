@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
 
   def index
     @post = Post.find(params[:post_id])
-    @comments = @post.comments.order("created_at DESC").page(params[:page]).per(20)
+    @comments = @post.comments.order("created_at DESC").page(params[:page]).per(10)
     render json: @comments
   end
 

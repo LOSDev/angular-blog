@@ -1,5 +1,6 @@
 <div class="page-header">
-  <h3>Comments <small class="label label-info">{{$ctrl.comments.length}}</small></h3>
+  <h3 ng-if="$ctrl.comments.length > 0">Comments</small></h3>
+  <h4 ng-if="$ctrl.comments.length == 0">No comments yet.</small></h4>
 </div>
 
 <div class="comments col-md-12" ng-repeat="comment in $ctrl.comments">

@@ -9,10 +9,12 @@ angular.module('blog')
     })
   }
   o.getAll = function (page, id) {
+    if (page === 1) {
+      comments = [];
+    }
     return $http.get('/posts/' + id + '/comments.json' + "?page=" + page)
     .then(function (resp) {
       comments = comments.concat(resp.data);
-      console.log(comments);
       return comments;
     })
   }
