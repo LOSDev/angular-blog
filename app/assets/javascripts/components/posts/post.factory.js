@@ -13,7 +13,7 @@ angular.module('blog')
   }
   o.getAll = function (page, id) {
     if (id) {
-      return $http.get(urlBase + ".json" + "?tag=" + "&page=" + page)
+      return $http.get(urlBase + ".json" + "?tag=" + id + "&page=" + page)
     }else {
       return $http.get(urlBase + ".json" + "?page=" + page)
     }

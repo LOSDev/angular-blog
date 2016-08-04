@@ -8,8 +8,6 @@ angular.module('blog')
       vm.tag = $stateParams.id
     }
 
-
-
     vm.prevPage = function () {
       vm.page -= 1;
       vm.getPosts();
@@ -20,12 +18,13 @@ angular.module('blog')
     }
 
     vm.getPosts = function () {
-
       Post.getAll(vm.page, $stateParams.id)
       .then(function (resp) {
         vm.posts = resp.data;
         if (resp.data.length < 15) {
           vm.lastPage = true;
+        }else {
+          vm.lastPage = false;
         }
       })
     }

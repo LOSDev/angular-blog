@@ -8,10 +8,11 @@ angular.module('blog')
       comments.unshift(resp.data);
     })
   }
-  o.getAll = function (id) {
-    return $http.get('/posts/' + id + '/comments.json')
+  o.getAll = function (page, id) {
+    return $http.get('/posts/' + id + '/comments.json' + "?page=" + page)
     .then(function (resp) {
-      comments = resp.data;
+      comments = comments.concat(resp.data);
+      console.log(comments);
       return comments;
     })
   }

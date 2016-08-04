@@ -2,15 +2,11 @@ angular.module('blog')
 .component('commentList', {
   templateUrl: "components/comments/comment-list.html",
   bindings: {
-    post: '='
+    post: '<'
   },
   controller: ['Comment', '$window', 'toastr', function (Comment, $window, toastr) {
     var vm = this;
-    Comment.getAll(vm.post.id)
-    .then(function (resp) {
-      vm.comments = resp;
-    })
-
+    vm.page = 1
     vm.delete = function (comment) {
       if ($window.confirm("Do you want to delete this comment?")) {
         Comment.delete(vm.post.id, comment)
@@ -19,5 +15,22 @@ angular.module('blog')
         })
       }
     }
+
+    vm.getComments = function () {
+      Comment.getAll(vm.page, vm.post.id)
+      .then(function (resp) {
+        vm.comments = resp;
+        if (resp.length < 20) {
+          vm.lastPage = true;
+        }
+      })
+    }
+
+    vm.nextPage = function () {
+      vm.page += 1;
+      vm.getComments();
+    }
+
+    vm.getComments();
   }]
 })
