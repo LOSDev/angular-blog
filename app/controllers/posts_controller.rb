@@ -39,7 +39,10 @@ class PostsController < ApplicationController
     head :no_content
   end
 
-
+  def tag_cloud
+    @tags = Post.tag_counts_on(:tags).order("count DESC").limit(25)
+    render json: @tags
+  end
 
   private
 

@@ -21,5 +21,9 @@ angular.module('blog')
   o.delete = function (post) {
     return $http.delete(urlBase + "/" + post.id + ".json")
   }
+
+  o.tagCloud = function () {
+    return $http.get(urlBase + "/tag_cloud.json")
+  }
   return o;
 }])

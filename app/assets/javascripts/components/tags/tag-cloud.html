@@ -1,0 +1,13 @@
+<div class="">
+  <h5>Popular Tags:</h5>
+  <ul class="list-inline">
+    <li ng-repeat="tag in $ctrl.tags track by $index" >
+      <a ng-if="tag.ranking < $ctrl.tags.length / 3" ui-sref="app.tag({id: tag.name})"><h5 class="btn btn-lg btn-default">{{tag.name}} <small></small></h5></a>
+      <a ng-if="tag.ranking > $ctrl.tags.length / 3 && tag.ranking < $ctrl.tags.length * 2 / 3" ui-sref="app.tag({id: tag.name})"><h5 class="btn btn-default">{{tag.name}} <small></small></h5></a>
+      <a ng-if="tag.ranking > $ctrl.tags.length * 2 / 3" ui-sref="app.tag({id: tag.name})"><h5 class="btn btn-sm btn-default">{{tag.name}} <small></small></h5></a>
+
+      &nbsp;
+
+    </li>
+  </ul>
+</div>

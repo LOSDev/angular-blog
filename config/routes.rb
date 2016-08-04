@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   root 'welcome#index'
   resources :posts do
     resources :comments
+    collection do
+      get 'tag_cloud'
+    end
   end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
