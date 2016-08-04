@@ -1,6 +1,6 @@
 <div class="form-group">
   <label for="tags">Tags</label>
-  <input type="text" class="form-control" ng-model="$ctrl.tagField" ng-keyup="$ctrl.add($event)">
+  <input type="text" class="form-control" ng-model="$ctrl.tagField" ng-keyup="$ctrl.add($event)"  placeholder="Hit return to add a tag">
 </div>
 <ul class="list-inline">
   <li ng-repeat="tag in $ctrl.tagList" ng-click="$ctrl.remove(tag)">

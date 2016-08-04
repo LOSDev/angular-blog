@@ -13,11 +13,10 @@
     </div>
   </div>
   <div class="col-md-6">
-    <h3>{{$ctrl.post.title}}</h3>
     <i>{{$ctrl.post.created_at | date:'fullDate'}}</i>
   </div>
   <div class="col-md-12">
-    <p>{{$ctrl.post.body}}</p>
+    <p ng-bind-html="$ctrl.post.body"></p>
   </div>
 </div>
 

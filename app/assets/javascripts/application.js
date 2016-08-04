@@ -14,6 +14,8 @@
 //= require bootstrap-sass/assets/javascripts/bootstrap-sprockets
 //= require angular
 //= require angular-ui-router
+//= require angular-sanitize
+
 //= require angular-devise
 //= require angular-toastr
 
