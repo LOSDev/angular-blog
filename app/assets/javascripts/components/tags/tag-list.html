@@ -1,0 +1,6 @@
+<ul class="list-inline">
+  <li><h4>Tags: </h4></li>
+  <li ng-repeat="tag in $ctrl.tagList">
+    <a ui-sref="app.tag({id: tag})"><h4><span class="label label-info">{{tag}}</span></h4></a>
+  </li>
+</ul>

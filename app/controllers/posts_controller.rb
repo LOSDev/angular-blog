@@ -4,7 +4,11 @@ class PostsController < ApplicationController
 
 
   def index
-    @posts = Post.all.order("created_at DESC")
+    if params[:tag]
+      @posts = Post.tagged_with(params[:tag]).order("created_at DESC")
+    else
+      @posts = Post.all.order("created_at DESC")
+    end
   end
 
   def show
@@ -40,6 +44,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :body)
+    params.require(:post).permit(:title, :body, :tag_list)
   end
 end

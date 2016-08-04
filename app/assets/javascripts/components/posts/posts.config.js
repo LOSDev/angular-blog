@@ -3,7 +3,7 @@ angular.module('blog')
   $stateProvider
     .state('app.newPost', {
       url: "posts/new",
-      template: "<new-post></new-post>",
+      template: "<post-form></post-form>",
       onEnter: ['$state', 'Auth', function($state, Auth) {
         Auth.currentUser().catch(function (){
          $state.go('app.home');
@@ -16,7 +16,7 @@ angular.module('blog')
     })
     .state('app.editPost', {
       url: "posts/:postId/edit",
-      template: "<edit-post></edit-post>",
+      template: "<post-form></post-form>",
       onEnter: ['$state', 'Auth', function($state, Auth) {
         Auth.currentUser().catch(function (){
          $state.go('app.home');

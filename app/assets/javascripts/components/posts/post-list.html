@@ -1,3 +1,4 @@
+<div class="alert alert-info" ng-if="$ctrl.tag"><h3>Tagged with: {{$ctrl.tag}}</h3></div>
 <div class="posts" ng-repeat="post in $ctrl.posts">
   <h2><a ui-sref="app.postDetails({postId: post.id})">{{post.title}}</a></h2>
   <p>

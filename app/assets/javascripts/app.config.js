@@ -16,4 +16,5 @@ angular.module('blog')
       url: "about",
       templateUrl: "components/about.html"
     })
+    
 })
