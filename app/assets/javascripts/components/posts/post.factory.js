@@ -11,11 +11,11 @@ angular.module('blog')
   o.get = function (id) {
     return $http.get(urlBase + "/" + id + ".json")
   }
-  o.getAll = function (id) {
+  o.getAll = function (page, id) {
     if (id) {
-      return $http.get(urlBase + ".json" + "?tag=" + id )
+      return $http.get(urlBase + ".json" + "?tag=" + "&page=" + page)
     }else {
-      return $http.get(urlBase + ".json")
+      return $http.get(urlBase + ".json" + "?page=" + page)
     }
   }
   o.delete = function (post) {

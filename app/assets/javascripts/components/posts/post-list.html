@@ -5,3 +5,14 @@
     {{post.created_at | date}}
   </p>
 </div>
+<hr>
+<div class="text-center">
+  <a class="btn btn-primary pull-left" ng-if="$ctrl.page > 1" ng-click="$ctrl.prevPage()">
+    <span class="glyphicon glyphicon-arrow-left"></span>
+    Newer
+  </a>
+  <a class="btn btn-primary" ng-if="!$ctrl.lastPage" ng-click="$ctrl.nextPage()">
+    Older
+    <span class="glyphicon glyphicon-arrow-right"></span>
+  </a>
+</div>
