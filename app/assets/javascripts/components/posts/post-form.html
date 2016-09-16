@@ -21,7 +21,7 @@
     </div>
     <div class="form-group">
       <label for="body">Body - <small>html for styling</small></label>
-      <textarea ng-model="$ctrl.post.body" rows="8" cols="40" class="form-control" required></textarea>
+      <textarea ui-tinymce ng-model="$ctrl.post.body" rows="8" cols="40" class="form-control" required></textarea>
     </div>
 
     <input ng-if="!$ctrl.post.id" type="submit" class="btn btn-lg btn-primary" value="Create Post"/>

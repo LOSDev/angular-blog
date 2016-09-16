@@ -6,6 +6,7 @@
     "angular-ui-router": "latest",
     "angular-devise": "latest",
     "angular-toastr": "latest",
-    "angular-sanitize": "latest"
+    "angular-sanitize": "latest",
+    "angular-ui-tinymce": "latest"
   }
 }

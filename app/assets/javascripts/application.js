@@ -12,13 +12,15 @@
 //
 //= require jquery
 //= require bootstrap-sass/assets/javascripts/bootstrap-sprockets
+//= require tinymce/tinymce
+
 //= require angular
 //= require angular-ui-router
 //= require angular-sanitize
 
 //= require angular-devise
 //= require angular-toastr
-
+//= require angular-ui-tinymce/src/tinymce
 //= require angular-rails-templates
 //= require app
 //= require_tree .
